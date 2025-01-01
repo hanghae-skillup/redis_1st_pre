@@ -18,7 +18,7 @@ public class BeforeOrderService {
     }
 
     // 주문 처리 메서드
-    public void order(String productName, int amount) {
+    public synchronized void order(String productName, int amount) {
         Integer currentStock = productDatabase.getOrDefault(productName, 0);
 
         try {
