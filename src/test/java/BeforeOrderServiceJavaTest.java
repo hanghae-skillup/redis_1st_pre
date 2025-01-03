@@ -5,6 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class BeforeOrderServiceJavaTest {
@@ -43,6 +44,7 @@ class BeforeOrderServiceJavaTest {
         System.out.println("Expected Stock: " + expectedStock + ", Actual Stock: " + actualStock);
 
         // 동시성 이슈로 인해 재고가 맞지 않는 경우를 확인
-        assertNotEquals(expectedStock, actualStock, "재고 불일치 발생!");
+        assertEquals(expectedStock, actualStock, "재고 일치!");
+//        assertNotEquals(expectedStock, actualStock, "재고 불일치 발생!");
     }
 }
